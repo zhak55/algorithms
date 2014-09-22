@@ -2,7 +2,7 @@
 // This algorithm works efficiently for small data sets or 
 // if your data set has already been partially sorted 
 
-function InsertionSort( arr ) {
+function InsertionSort( arr, inv ) {
  var i = 0, $interim, $prev;
     for( ; i < arr.length; i++ ) {
       $interim = arr[i];
@@ -13,5 +13,5 @@ function InsertionSort( arr ) {
            $prev--;
         }
     }
-  return arr;
+  return inv ? arr.reverse() : arr;
 };
