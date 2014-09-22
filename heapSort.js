@@ -1,3 +1,8 @@
+
+// Should remember:
+// It is good for unsorted data
+// if you use n < 1500-2000 you should use Shellsort
+
 function Heapsort( arr ) {
   this.$arr = arr;
   this.heapSize  = arr.length;
@@ -22,10 +27,7 @@ Heapsort.prototype.heapify = function( i ) {
   ,   largest = i;
    if( left  < this.heapSize && this.$arr[i] < this.$arr[left] ) largest = left ;
    if( right < this.heapSize && this.$arr[largest] < this.$arr[right] ) largest = right;
-   if( i !== largest ) {
-        this.swap( i , largest )
-        this.heapify( largest ) 
-    }
+   if( i !== largest ) this.swap( i , largest ) && this.heapify( largest ) 
 };
 
 Heapsort.prototype.swipe = function( i , l ) {
@@ -36,4 +38,5 @@ Heapsort.prototype.swap = function( i , j ) {
   var $interim = this.$arr[i];
        this.$arr[i] = this.$arr[j];
        this.$arr[j] = $interim;
+       return true;
 };
