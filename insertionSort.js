@@ -4,7 +4,7 @@
 
 function InsertionSort( arr ) {
  var i = 0, $interim, $prev;
-    for( ; i < arr.length; i ++ ) {
+    for( ; i < arr.length; i++ ) {
       $interim = arr[i];
       $prev = i - 1;
         while( $prev >=0 && arr[$prev] > $interim ) {
